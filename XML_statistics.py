@@ -18,12 +18,10 @@ for xmlFile in files:  # 遍历文件夹
         root = dom.documentElement
         # 获取标签对name/pose之间的值
         name = root.getElementsByTagName('name')
-        # pose = root.getElementsByTagName('pose')
         # 重命名class name
 		#统计开始
         sum = sum + 1
         for i in range(len(name)):
-            # print(name[i].firstChild.data)
             if (name[i].firstChild.data != oldname):
                 # print(xmlFile)
                 print(sum)
@@ -31,24 +29,9 @@ for xmlFile in files:  # 遍历文件夹
                 # print(name[i].firstChild.data+xmlFile)
                 oldname = name[i].firstChild.data
                 sum = 0
-				#统计结束
-            # name[i].firstChild.data = 'circle'
-            # print(name[i].firstChild.data)
-
-        # for j in range(len(pose)):
-        #     print
-        #     pose[j].firstChild.data
-        #     pose[j].firstChild.data = 'ok'
-        #     print
-        #     pose[j].firstChild.data
+		#统计结束
 
         # 保存修改到xml文件中
     # with open(os.path.join(path, xmlFile), 'w') as fh:
     #     dom.writexml(fh)
     #     print('写入name/pose OK!')
-
-    #  with open('dom_write.xml','w',encoding='UTF-8') as fh:
-    #             # 4.writexml()第一个参数是目标文件对象，第二个参数是根节点的缩进格式，第三个参数是其他子节点的缩进格式，
-    #             # 第四个参数制定了换行格式，第五个参数制定了xml内容的编码。
-    #             dom.writexml(fh,indent='',addindent='\t',newl='\n',encoding='UTF-8')
-    #             print('写入xml OK!')
