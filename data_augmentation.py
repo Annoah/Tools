@@ -112,8 +112,8 @@ def change_region(image, x1, y1, x2, y2):
 
 if __name__ == '__main__':
     for n in range(1, 1500):
-        if(n != 44 and n != 160 and n != 161 and n != 249 and n != 363 and n != 365 and n != 401 and n != 402 and n != 538 and n != 541 and n != 553 and n != 554 and n != 559 and n != 692 and n != 698 and n != 868 and n != 869 and n != 936 and n != 937 and n != 939 and n != 1058 and n != 1088 and n != 1089 and n != 1094 and n != 1099 and n != 1102 and n != 1105 and n != 1120 and n != 1122):
-            # n = 1   44 160 161 249 363 365 401 402 538 541 553 554 559 692 698 868 869 936 937 939 1058 1088 1089 1094 1099 1102 1105 1120 1122
+        try:            
+            # n = 1
             # s = n.zfill(6)
             # 生成图像和xml的路径
             s = "%06d" % n
@@ -150,3 +150,5 @@ if __name__ == '__main__':
                 image.save('JPEGImages/IMG_' + s + c + '.jpg', 'jpeg')
                 with open('Annotations/IMG_' + s + c + '.xml', 'w') as fh:
                     dom.writexml(fh)
+        except:
+            print(s)
